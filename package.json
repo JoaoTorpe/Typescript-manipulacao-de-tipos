@@ -4,7 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "cond": "npx tsx conditional.ts"
+    "cond": "npx tsx conditional.ts",
+    "map": "npx tsx mapped.ts"
   },
   "author": "",
   "license": "ISC",
