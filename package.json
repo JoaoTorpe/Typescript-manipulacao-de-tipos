@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "cond": "npx tsx conditional.ts",
-    "map": "npx tsx mapped.ts"
+    "map": "npx tsx mapped.ts",
+    "literal": "npx tsx literal.ts"
   },
   "author": "",
   "license": "ISC",
