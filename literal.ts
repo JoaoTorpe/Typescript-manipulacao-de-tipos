@@ -2,15 +2,15 @@
 
 type hello = "Hello"
 
-const greeting : hello  = "Hello"
-const greeting2 : hello  = "Hi" // Tipo 'Hi' não pode ser do tipo 'Hello'
+const greeting: hello = "Hello"
+const greeting2: hello = "Hi" // Tipo 'Hi' não pode ser do tipo 'Hello'
 
 
 //Utilizando junto com union types
 type Size = "small" | "medium" | "large";
 type ButtonVariant = `btn-${Size}`; // "btn-small" | "btn-medium" | "btn-large"
 
-const btn1: ButtonVariant = "btn-small";  
+const btn1: ButtonVariant = "btn-small";
 const btn2: ButtonVariant = "btn-huge";   //"huge" não está definido
 
 

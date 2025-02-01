@@ -2,7 +2,7 @@
 //Ser para criar tipos a partir de tipos já existentes
 
 //Estrutura básica
-interface NewType{}
+interface NewType { }
 
 type MappedType<Type> = {
     [Property in keyof Type]: NewType;
@@ -27,55 +27,62 @@ type PartialUser = {
 
 //Exemplo 02 deixando todas as propriedades como read-only
 
-type dataType ={
-    response:string,
-    status:number,
+type dataType = {
+    response: string,
+    status: number,
 }
 let data: dataType = {
-    response:"ok",
-    status:200
+    response: "ok",
+    status: 200
 }
 console.log(data)// { response: 'ok', status: 200 }
 
-type makeReadOnly<T> = {
-    readonly [P in keyof T] : T[P]
-} 
+data.response = "Created"
+data.status = 201
 
-let anotherData: makeReadOnly<dataType>={
-    response:"Created",
-    status:201
+type makeReadOnly<T> = {
+    readonly [P in keyof T]: T[P]
 }
 
+let anotherData: makeReadOnly<dataType> = {
+    response: "Created",
+    status: 201
+}
+
+anotherData.response = "ok"
+anotherData.status = 200
 
 //Exemplo 03 removendo propriedade especifica
-
-type RemoveIdField<Type> = {
-    [Property in keyof Type as Exclude<Property, "id">]: Type[Property]
+type RemovePlateField<Type> = {
+    [Property in keyof Type as Exclude<Property, "plate">]: Type[Property]
 };
 
 interface Car {
     id: number;
     year: number;
-    brand:string
+    brand: string,
+    plate: string
 }
 
 
-let car : Car ={
-     id:1,
-     year:2020,
-     brand:"Toyota"
+let car: Car = {
+    id: 1,
+    year: 2020,
+    brand: "Toyota",
+    plate: "ABC-1234"
 }
 
-console.log(car) // { id: 1, year: 2020, brand: 'Toyota' }
+console.log(car) // { id: 1, year: 2020, brand: 'Toyota', plate: 'ABC-1234' }
 
-type CarWithoutId = RemoveIdField<Car>;
+type CarWithoutPlate = RemovePlateField<Car>;
 
-let carWithoutId: CarWithoutId ={
-    year:2020,
-    brand:"Toyota"
+let carWithoutPlate: CarWithoutPlate = {
+    id:1,    
+    year: 2020,
+    brand: "Toyota"
 }
 
-console.log(carWithoutId) // { year: 2020, brand: 'Toyota' }
+console.log(carWithoutPlate) // { id: 1, year: 2020, brand: 'Toyota' }
 
 
 
