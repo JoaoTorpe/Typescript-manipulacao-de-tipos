@@ -15,7 +15,7 @@ const btn2: ButtonVariant = "btn-huge";   //"huge" não está definido
 
 
 //Exemplo 01 criando nome para arquivos
-type FileType = "jpg" | "png" | "gif";
+type FileType = "jpg" | "png" | "gif" ;
 type FileName = `image.${FileType}`;
 
 const file1: FileName = "image.jpg"; // Válido

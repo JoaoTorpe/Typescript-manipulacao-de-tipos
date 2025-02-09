@@ -17,7 +17,6 @@ let result = true ? 'its true' : 'its false'
 console.log(result)//its true
 
 
-//É utilizado para limitar os tipos que serão passados para o tipo genérico
 type isString<T> = T extends string ? "Yes" : "No";
 type result1 = isString<"String">//Yes
 type result2 = isString<10>//No

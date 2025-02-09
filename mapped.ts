@@ -1,13 +1,6 @@
 //Mapped Types 
 //Ser para criar tipos a partir de tipos já existentes
 
-//Estrutura básica
-interface NewType { }
-
-type MappedType<Type> = {
-    [Property in keyof Type]: NewType;
-};
-
 //Exemplo 01 deixando todas as propriedades como opcionais
 
 type User = {
