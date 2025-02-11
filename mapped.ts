@@ -8,11 +8,11 @@ type User = {
     age: number;
 }
 
-type PartialUser = {
+type optionalUser = {
     [Property in keyof User]?: User[Property];
 };
 
-// type PartialUser ={
+// type optionalUser ={
 //     name?: string;
 //     age?: number;
 // }
